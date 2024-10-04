@@ -10,7 +10,7 @@ import MapKit
 
 
 struct LocationsView: View {
-    @StateObject private var vm = LocationsViewModel()
+    @EnvironmentObject private var vm: LocationsViewModel
     
     var body: some View {
         ZStack {
@@ -21,12 +21,10 @@ struct LocationsView: View {
             }
             
             VStack {
-                ForEach(vm.locations) { location in
-                    Text(location.name)
-                        .onTapGesture {
-                            vm.selectedLocation = location
-                        }
-                }
+                header
+                    .padding()
+                    
+                
                 Spacer()
             }
         }
@@ -35,4 +33,37 @@ struct LocationsView: View {
 
 #Preview {
     LocationsView()
+        .environmentObject(LocationsViewModel())
+}
+
+extension LocationsView {
+    private var header: some View {
+        VStack {
+            HStack {
+                Button(action: vm.toggleIsShowingLocationsList) {
+                    Text(vm.selectedLocation.cityName + ", " + vm.selectedLocation.name)
+                        .font(.title2)
+                        .fontWeight(.black)
+                        .foregroundStyle(.primary)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .animation(.none, value: vm.selectedLocation)
+                        .overlay(alignment: .leading) {
+                            Image(systemName: "arrow.down")
+                                .font(.headline)
+                                .foregroundStyle(.primary)
+                                .padding()
+                                .rotationEffect(Angle(degrees: vm.isShowingLocationsList ? 180 : 0))
+                        }
+                }
+            }
+            if vm.isShowingLocationsList {
+                LocationsListView()
+            }
+            
+        }
+        .background(.thickMaterial)
+        .clipShape(RoundedRectangle(cornerRadius: 10))
+        .shadow(radius: 20, y: 15)
+    }
 }

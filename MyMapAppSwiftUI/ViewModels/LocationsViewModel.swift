@@ -18,6 +18,8 @@ class LocationsViewModel: ObservableObject {
     }
     @Published var position: MapCameraPosition = MapCameraPosition.automatic
     
+    @Published var isShowingLocationsList: Bool = false
+    
     private let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
     
     init() {
@@ -33,6 +35,19 @@ class LocationsViewModel: ObservableObject {
             position = .region(MKCoordinateRegion(
                 center: selectedLocation.coordinates,
                 span: span))
+        }
+    }
+    
+    func toggleIsShowingLocationsList() {
+        withAnimation(.easeInOut) {
+            isShowingLocationsList = !isShowingLocationsList
+        }
+    }
+    
+    func showSelectedLocation(location: Location) {
+        withAnimation(.easeInOut) {
+            selectedLocation = location
+            isShowingLocationsList = false
         }
     }
 }

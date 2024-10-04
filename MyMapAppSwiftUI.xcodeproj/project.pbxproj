@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D0941912CB0526800E4F5D4 /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0941902CB0526800E4F5D4 /* LocationsListView.swift */; };
+		1D0941932CB0865100E4F5D4 /* LocationPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0941922CB0865100E4F5D4 /* LocationPreviewView.swift */; };
 		1D111B1E2CAD7D7100CD860D /* MyMapAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D111B1D2CAD7D7100CD860D /* MyMapAppSwiftUIApp.swift */; };
 		1D111B202CAD7D7100CD860D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D111B1F2CAD7D7100CD860D /* ContentView.swift */; };
 		1D111B222CAD7D7400CD860D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D111B212CAD7D7400CD860D /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		1D0941902CB0526800E4F5D4 /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
+		1D0941922CB0865100E4F5D4 /* LocationPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPreviewView.swift; sourceTree = "<group>"; };
 		1D111B1A2CAD7D7100CD860D /* MyMapAppSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMapAppSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D111B1D2CAD7D7100CD860D /* MyMapAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMapAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		1D111B1F2CAD7D7100CD860D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				1D111B332CAD8FCE00CD860D /* LocationsView.swift */,
 				1D0941902CB0526800E4F5D4 /* LocationsListView.swift */,
+				1D0941922CB0865100E4F5D4 /* LocationPreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				1D111B202CAD7D7100CD860D /* ContentView.swift in Sources */,
 				1D0941912CB0526800E4F5D4 /* LocationsListView.swift in Sources */,
+				1D0941932CB0865100E4F5D4 /* LocationPreviewView.swift in Sources */,
 				1D111B362CAD8FE200CD860D /* LocationsViewModel.swift in Sources */,
 				1D111B2F2CAD834C00CD860D /* Location.swift in Sources */,
 				1D111B342CAD8FCE00CD860D /* LocationsView.swift in Sources */,

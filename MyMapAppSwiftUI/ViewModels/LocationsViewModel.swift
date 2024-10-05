@@ -50,4 +50,21 @@ class LocationsViewModel: ObservableObject {
             isShowingLocationsList = false
         }
     }
+    
+    func nextButtonPressed() {
+        guard let currentIndex = locations.firstIndex(where: { $0 == selectedLocation }) else {
+            print("Error: -nextButtonPressed()- current index")
+            return
+        }
+        
+        let nextIndex = currentIndex + 1
+        
+        guard locations.indices.contains(nextIndex) else {
+            guard let firstLocation = locations.first else { return }
+            showSelectedLocation(location: firstLocation)
+            return
+        }
+        let nextLocation = locations[nextIndex]
+        showSelectedLocation(location: nextLocation)
+    }
 }

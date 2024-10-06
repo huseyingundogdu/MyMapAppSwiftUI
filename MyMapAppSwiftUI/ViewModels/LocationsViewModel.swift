@@ -19,8 +19,9 @@ class LocationsViewModel: ObservableObject {
     @Published var position: MapCameraPosition = MapCameraPosition.automatic
     
     @Published var isShowingLocationsList: Bool = false
+    @Published var sheetLocation: Location? = nil
     
-    private let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+    let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
     
     init() {
         let locations = LocalDataService.locations
